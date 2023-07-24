@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Tektur', cursive;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: rgb(15, 139, 95);
+    background: linear-gradient(351deg, rgba(15, 139, 95, 1) 19%,
+            rgba(242, 249, 249, 0.834983498349835) 93%) no-repeat center center/cover;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: teal;
+    padding: 20px 40px;
+}
+
+h1,
+h2 {
+    font-size: 40px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.cards {
+    border-radius: 50px;
+    width: 440px;
+    height: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+button {
+    font-family: 'Tektur', cursive;
+    font-size: 20px;
+    padding: 20px 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    transition: 0.3s ease-in;
+}
+
+button:hover {
+    color: #fff;
+    background-color: tomato;
+}
+
+.item {
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 10px;
+    background-color: bisque;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.25s;
+    transform: rotateY(180deg);
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #fff;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.boxOpen::after {
+    transform: rotateY(180deg);
+}
+
+.boxMatch::after {
+    transform: rotateY(180deg);
+
+}
+
+.banner {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 26%, rgba(215, 10, 237, 0.834983498349835) 87%);
+    position: absolute;
+    padding: 40px 60px;
+    z-index: 10;
+    border-radius: 10px;
+    left: 16em;
+    display: none;
+}
+
+p {
+    font-size: 30px;
+    margin: 20px 0;
+}
